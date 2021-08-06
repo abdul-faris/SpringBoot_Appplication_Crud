@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <h1>update Employee Details</h1>
+
+    <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+        <input readonly th:field="*{id}" class="form-control mb-4 col-4"/>
+        <input type="text" placeholder="First Name" th:field="*{first_name}" class="form-control mb-4 col-4">
+        <input type="text" placeholder="Last Name" th:field="*{last_name}" class="form-control mb-4 col-4">
+        <input type="text"                                    placeholder="Email" th:field="*{email}" class="form-control mb-4 col-4">
+        <input type="text" placeholder="Department" th:field="*{department}" class="form-control mb-4 col-4">
+        <button class="btn btn-info col-2" onclick="Myfunction" type="submit">Submit</button>
+    </form>
+</div>
+<script>
+    function Myfunction(){
+        document.getElementById('mymail').innerHTML=document.getElementById('mymail').pattern;
+    }
+</script>
+
+</body>
+</html>
